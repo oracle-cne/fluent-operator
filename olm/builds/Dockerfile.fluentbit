@@ -1,4 +1,4 @@
-FROM olcne-containers-stable.dockerhub-iad.oci.oraclecorp.com/olcne/fluent-bit-base:v4.2.0
+FROM container-registry.oracle.com/olcne/fluent-bit-base:v4.2.0
 
 COPY rpms /tmp/
 
