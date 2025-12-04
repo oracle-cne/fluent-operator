@@ -1,0 +1,13 @@
+FROM container-registry.oracle.com/olcne/fluent-bit-base:v4.2.0
+
+COPY rpms /tmp/
+
+RUN microdnf update -y && \
+    microdnf clean all && \
+    rpm -i /tmp/*.rpm && \
+    rm /tmp/*.rpm
+
+COPY conf/fluent-bit.conf conf/fluent-bit.yaml conf/parsers.conf /fluent-bit/etc/
+
+# Entry point
+ENTRYPOINT ["/fluent-bit/bin/fluent-bit-watcher"]
