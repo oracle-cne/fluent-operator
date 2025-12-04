@@ -6,7 +6,7 @@ String imgTag  = "v" + version
 String fluentBitImageTag = "v4.2.0"
 
 olcnePipeline(
-        branchPattern: new BranchPattern(master: "oracle/release/" + version, feature: 'f(?!^release/.*$)(^.*$)'),
+        branchPattern: new BranchPattern(master: "oracle/release/" + version, feature: '(?!^release/.*$)(^.*$)'),
         containers: [('container-registry.oracle.com/olcne/fluent-operator:' + imgTag): 'olcne/fluent-operator:' + imgTag,
                      ('container-registry.oracle.com/olcne/fluent-bit:' + fluentBitImageTag): 'olcne/fluent-bit:' + fluentBitImageTag],
         architectures: ['x86_64', 'aarch64'],
