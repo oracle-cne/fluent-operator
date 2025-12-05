@@ -1,4 +1,5 @@
-@Library('olcne-pipeline') _
+@Library('pipeline-shared@feature/mgianata-delete-rpms-on-stable-build-failure')
+@Library('olcne-pipeline@feature/mgianata-delete-rpms-on-stable-build-failure') _
 import com.oracle.olcne.pipeline.BranchPattern
 
 String version = '3.5.0'
