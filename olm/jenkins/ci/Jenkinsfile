@@ -1,5 +1,5 @@
-@Library('pipeline-shared@feature/mgianata-delete-rpms-on-stable-build-failure')
-@Library('olcne-pipeline@feature/mgianata-delete-rpms-on-stable-build-failure') _
+@Library('pipeline-shared@feature/mgianata-test-keeping-openldap')
+@Library('olcne-pipeline@feature/mgianata-test-keeping-openldap') _
 import com.oracle.olcne.pipeline.BranchPattern
 
 String version = '3.5.0'
