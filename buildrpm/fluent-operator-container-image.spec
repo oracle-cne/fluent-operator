@@ -30,7 +30,7 @@ Provides great flexibility in building a logging layer based on Fluent Bit and F
 %build
 %global rpm_name %{app_name}-%{version}-%{release}.%{_build_arch}
 %global docker_tag %{registry}/%{app_name}:v%{version}
-%global docker_tag_fluentbit %{registry}/fluent-bit:v4.2.0
+%global docker_tag_fluentbit %{registry}/fluent-bit:v4.2.2
 %global app_name_fluentbit fluent-bit
 
 yum clean all
