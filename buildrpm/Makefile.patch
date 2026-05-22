@@ -1,0 +1,16 @@
+diff --git Makefile Makefile
+index fcc2dadf..a993ebae 100644
+--- Makefile
++++ Makefile
+@@ -113,9 +113,9 @@ lint-config: golangci-lint ## Verify golangci-lint linter configuration
+ ##@ Build
+ 
+ binary:
+-	go build -o bin/fb-manager ./cmd/fluent-manager
+-	go build -o bin/fb-watcher ./cmd/fluent-watcher/fluentbit
+-	go build -o bin/fd-watcher ./cmd/fluent-watcher/fluentd
++	go build -trimpath=false -ldflags="-X main.version=v%{VERSION}" -o bin/fb-manager ./cmd/fluent-manager
++	go build -trimpath=false -ldflags="-X main.version=v%{VERSION}" -o bin/fb-watcher ./cmd/fluent-watcher/fluentbit
++	go build -trimpath=false -ldflags="-X main.version=v%{VERSION}" -o bin/fd-watcher ./cmd/fluent-watcher/fluentd
+ 
+ verify: verify-crds verify-codegen
