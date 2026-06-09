@@ -1,0 +1,15 @@
+@Library('olcne-pipeline') _
+import com.oracle.olcne.pipeline.BranchPattern
+
+String version = '3.9.0'
+String imgTag  = "v" + version
+String fluentBitImageTag = "v4.2.0"
+
+olcnePipeline(
+        branchPattern: new BranchPattern(master: "oracle/release/" + version, feature: '(?!^release/.*$)(^.*$)'),
+        containers: [('container-registry.oracle.com/olcne/fluent-operator:' + imgTag): 'olcne/fluent-operator:' + imgTag,
+                     ('container-registry.oracle.com/olcne/fluent-bit:' + fluentBitImageTag): 'olcne/fluent-bit:' + fluentBitImageTag],
+        architectures: ['x86_64', 'aarch64'],
+        platforms: ['ol8'],
+        yumOL8Repos: ['ol8_codeready_builder', 'ol8_UEKR7'],
+)
