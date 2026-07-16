@@ -19,7 +19,6 @@ License:        Apache-2.0
 Group:          System/Management
 Url:            https://github.com/fluent/fluent-operator.git
 Source:         %{name}-%{version}.tar.bz2
-Patch0:         Makefile.patch
 BuildRequires:  golang
 BuildRequires:  make
 
