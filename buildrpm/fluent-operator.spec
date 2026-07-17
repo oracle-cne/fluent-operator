@@ -27,7 +27,6 @@ Provides great flexibility in building a logging layer based on Fluent Bit and F
 
 %prep
 %setup -q -n %{name}-%{version}
-%patch0
 
 %build
 make binary
