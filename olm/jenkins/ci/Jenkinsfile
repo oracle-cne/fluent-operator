@@ -11,5 +11,6 @@ olcnePipeline(
                      ('container-registry.oracle.com/olcne/fluent-bit:' + fluentBitImageTag): 'olcne/fluent-bit:' + fluentBitImageTag],
         architectures: ['x86_64', 'aarch64'],
         platforms: ['ol8'],
+        noSlim: ['fluent-bit': []],
         yumOL8Repos: ['ol8_codeready_builder', 'ol8_UEKR7'],
 )
